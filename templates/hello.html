@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+
+
+<h1>Hello {{ first_name }} {{ last_name|upper }}!</h1>
+
+{# Check if the user_type variable is equal to 'admin' #}
+{% if user_type == 'admin' %}
+    <h1>Hello admin user!</h1>
+{% else %}
+    {# If the user_type variable is not 'admin', execute this block #}
+    <h1>Hello Regular user!</h1>
+{% endif %}
+
+
+<p>States Visited:</p>
+<ol>
+    {# creates a loop to iterate all states items #}
+    {% for state in states %}
+        {# check if state is equal to 'CT', if so creates a list item with red color #}
+        {% if state == 'CT' %}
+            <li style="color: red">{{ state }}</li>
+        {% else %}
+            {# if state is not 'CT', creates a list item (not red) #}
+            <li>{{ state }}</li>
+        {% endif %}
+    {% endfor %}
+</ol>
+
+
+</body>
+</html>
